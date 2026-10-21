@@ -1,123 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Admission Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Student Admission Form</h1>
+    <header class="site-header">
+        <p class="eyebrow">STUDENT PORTAL</p>
+        <h1>Student Admission Form</h1>
+        <p class="intro">
+            Take the next step in your learning journey.
+            Complete the form below to apply.
+        </p>
+    </header>
 
-  <form action="#" method="post">
+    <main class="page-main">
+        <div class="form-card">
 
-    <fieldset>
-      <legend>Personal Information</legend>
+            <div class="form-heading">
+                <div>
+                    <p class="eyebrow">ADMISSION APPLICATION</p>
+                    <h2>Application Details</h2>
+                </div>
+                <p class="required-note">
+                    <span>*</span> Required field
+                </p>
+            </div>
 
-      <label for="fullname">Full Name:</label>
-      <input type="text" id="fullname" name="fullname" placeholder="Enter Your Full Name" required>
-      <br><br>
+            <form action="#" method="get">
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" placeholder="username@gmail.com" required>
-      <br><br>
+                <fieldset class="form-section">
+                    <legend>01. Personal Information</legend>
 
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
-      <br><br>
+                    <div class="field-grid">
 
-      <label for="age">Age:</label>
-      <input type="number" id="age" name="age" min="16" max="60" placeholder="16-" required>
-      <br><br>
+                        <div class="form-group">
+                            <label for="fullname">
+                                Full Name <span class="required-mark">*</span>
+                            </label>
+                            <input class="form-control" type="text"
+                                   id="fullname" name="fullname"
+                                   placeholder="Enter your full name"
+                                   minlength="3" required>
+                        </div>
 
-      <label for="city">City:</label>
-      <select id="city" name="city">
-        <option value="islamabad">Islamabad</option>
-        <option value="lahore">Lahore</option>
-        <option value="karachi">Karachi</option>
-      </select>
-    </fieldset>
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address <span class="required-mark">*</span>
+                            </label>
+                            <input class="form-control" type="email"
+                                   id="email" name="email"
+                                   placeholder="name@example.com" required>
+                        </div>
 
-    <br><br>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input class="form-control" type="tel"
+                                   id="phone" name="phone"
+                                   placeholder="03XXXXXXXXX"
+                                   pattern="03[0-9]{9}"
+                                   title="Enter an 11-digit Pakistani mobile number starting with 03">
+                            <small class="field-hint">
+                                Optional: 11 digits, starting with 03.
+                            </small>
+                        </div>
 
-    <fieldset>
-      <legend>Course Selection</legend>
-      <label for="course">Select your course:</label>
-      <select id="course" name="course">
-        <option value="web">Web Development</option>
-        <option value="python">Python Programming</option>
-        <option value="data">Data Science</option>
-        <option value="data">Cyber Security</option>
-      </select>
-    </fieldset>
+                        <div class="form-group">
+                            <label for="age">
+                                Age <span class="required-mark">*</span>
+                            </label>
+                            <input class="form-control" type="number"
+                                   id="age" name="age"
+                                   placeholder="Enter your age"
+                                   min="16" max="60" required>
+                        </div>
 
-    <br><br>
+                        <div class="form-group field-full">
+                            <label for="city">
+                                City <span class="required-mark">*</span>
+                            </label>
+                            <select class="form-control" id="city"
+                                    name="city" required>
+                                <option value="">Select your city</option>
+                                <option value="Islamabad">Islamabad</option>
+                                <option value="Lahore">Lahore</option>
+                                <option value="Karachi">Karachi</option>
+                                <option value="Peshawar">Peshawar</option>
+                                <option value="Quetta">Quetta</option>
+                                <option value="Abbottabad">Abbottabad</option>
+                            </select>
+                        </div>
 
-    <fieldset>
-      <legend>Preferred Class Shift</legend>
+                    </div>
+                </fieldset>
 
-      <input type="radio" id="morning" name="shift" value="morning">
-      <label for="morning">Morning</label>
-      <br>
+                <fieldset class="form-section">
+                    <legend>02. Course Selection</legend>
 
-      <input type="radio" id="afternoon" name="shift" value="afternoon">
-      <label for="afternoon">Afternoon</label>
-      <br>
+                    <div class="form-group">
+                        <label for="course">
+                            Choose a Course <span class="required-mark">*</span>
+                        </label>
+                        <select class="form-control" id="course"
+                                name="course" required>
+                            <option value="">Select a course</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                            <option value="Artificial Intelligence">
+                                Artificial Intelligence
+                            </option>
+                        </select>
+                    </div>
 
-      <input type="radio" id="evening" name="shift" value="evening">
-      <label for="evening">Evening</label>
-    </fieldset>
+                    <div class="field-grid extra-fields">
+                        <div class="form-group">
+                            <label for="portfolio">
+                                Portfolio Website
+                                <span class="optional-label">(Optional)</span>
+                            </label>
+                            <input class="form-control" type="url"
+                                   id="portfolio" name="portfolio"
+                                   placeholder="https://your-portfolio.com">
+                        </div>
 
-    <br><br>
+                        <div class="form-group">
+                            <label for="start-date">
+                                Preferred Starting Date
+                                <span class="optional-label">(Optional)</span>
+                            </label>
+                            <input class="form-control" type="date"
+                                   id="start-date" name="start-date">
+                        </div>
+                    </div>
+                </fieldset>
 
-    <fieldset>
-      <legend>Skills</legend>
+                <fieldset class="form-section">
+                    <legend>03. Preferred Class Shift</legend>
 
-      <input type="checkbox" id="html" name="skills" value="html">
-      <label for="html">HTML</label>
-      <br>
+                    <p class="section-description">
+                        Choose one shift that works best for you.
+                        <span class="required-mark">*</span>
+                    </p>
 
-      <input type="checkbox" id="css" name="skills" value="css">
-      <label for="css">CSS</label>
-      <br>
+                    <div class="choice-grid">
 
-      <input type="checkbox" id="js" name="skills" value="javascript">
-      <label for="js">JavaScript</label>
-      <br>
+                        <div class="choice-card">
+                            <input type="radio" id="morning"
+                                   name="shift" value="Morning" required>
+                            <label for="morning">
+                                <span class="choice-title">Morning</span>
+                                <span class="choice-detail">
+                                    Start your day with learning
+                                </span>
+                            </label>
+                        </div>
 
-      <input type="checkbox" id="py" name="skills" value="python">
-      <label for="py">Python</label>
-    </fieldset>
+                        <div class="choice-card">
+                            <input type="radio" id="evening"
+                                   name="shift" value="Evening">
+                            <label for="evening">
+                                <span class="choice-title">Evening</span>
+                                <span class="choice-detail">
+                                    Learn after daytime tasks
+                                </span>
+                            </label>
+                        </div>
 
-    <br><br>
+                        <div class="choice-card">
+                            <input type="radio" id="weekend"
+                                   name="shift" value="Weekend">
+                            <label for="weekend">
+                                <span class="choice-title">Weekend</span>
+                                <span class="choice-detail">
+                                    Make time on the weekend
+                                </span>
+                            </label>
+                        </div>
 
-    <fieldset>
-      <legend>Motivation</legend>
-      <label for="reason">Why do you want to join this course?</label>
-      <br>
-      <textarea id="reason" name="reason" rows="3" cols="30" placeholder="Write Your Reason here..."></textarea>
-      <br><br>
-    </fieldset>
+                    </div>
+                </fieldset>
 
-    <br><br>
+                <fieldset class="form-section">
+                    <legend>
+                        04. Existing Skills
+                        <span class="optional-label">(Optional)</span>
+                    </legend>
 
-    <fieldset>
-      <legend>Additional Information(optional)</legend>
+                    <p class="section-description">
+                        Select any skills you already have.
+                        You can choose more than one.
+                    </p>
 
-      <label for="portfolio">Portfolio Website URL:</label>
-      <input type="url" id="portfolio" name="portfolio" placeholder="https://example.com">
-      <br><br>
+                    <div class="skills-grid">
 
-      <label for="startdate">Preferred Starting Date:</label>
-      <input type="text" id="startdate" name="startdate" placeholder="DD/MM/YYYY">
-      <br><br>
-    </fieldset>
+                        <label class="skill-option" for="skill-html">
+                            <input type="checkbox" id="skill-html"
+                                   name="skills" value="HTML">
+                            <span>HTML</span>
+                        </label>
 
-    <br>
+                        <label class="skill-option" for="skill-css">
+                            <input type="checkbox" id="skill-css"
+                                   name="skills" value="CSS">
+                            <span>CSS</span>
+                        </label>
 
-    <button type="submit">Submit Application</button>
-    <button type="reset">Reset</button>
+                        <label class="skill-option" for="skill-javascript">
+                            <input type="checkbox" id="skill-javascript"
+                                   name="skills" value="JavaScript">
+                            <span>JavaScript</span>
+                        </label>
 
-  </form>
+                        <label class="skill-option" for="skill-python">
+                            <input type="checkbox" id="skill-python"
+                                   name="skills" value="Python">
+                            <span>Python</span>
+                        </label>
+
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>05. Motivation</legend>
+
+                    <div class="form-group">
+                        <label for="motivation">
+                            Why do you want to join this course?
+                            <span class="required-mark">*</span>
+                        </label>
+
+                        <textarea class="form-control"
+                                  id="motivation" name="motivation"
+                                  rows="5"
+                                  placeholder="Tell us what you hope to learn (10–200 characters)..."
+                                  minlength="10" maxlength="200"
+                                  required></textarea>
+
+                        <small class="field-hint">
+                            Write between 10 and 200 characters.
+                        </small>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button class="submit-button" id="submit-button"
+                            type="submit">
+                        Submit Application <span aria-hidden="true">→</span>
+                    </button>
+
+                    <button class="reset-button" type="reset">
+                        Reset Form
+                    </button>
+                </div>
+
+                <p class="privacy-note">
+                    Demo form for coursework. Do not enter real personal information.
+                </p>
+
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            Designed by <strong>Romaisa Inam</strong>
+            <span class="footer-divider">|</span>
+            Roll No. <strong>3139635</strong>
+        </p>
+        <p>Web Development Advanced — Assignment 05</p>
+    </footer>
+
 </body>
 </html>
