@@ -270,15 +270,19 @@ button:focus-visible {
     border: 1px solid #23784d;
 }
 
-/* Unique improvement 2:
-   The submit button lifts slightly on hover.
-   transform, box-shadow and transition create a clear interactive effect. */
-#submit-button:hover {
-    background: #175c39;
-    box-shadow: 0 7px 16px rgba(35, 120, 77, 0.22);
-    transform: translateY(-2px);
+/* Improvement: Adds a smooth hover effect to the Submit button.
+   Why: Makes the button more interactive and easier to notice.
+   Properties: transform moves the button, box-shadow adds depth,
+   and transition makes the effect smooth. */
+
+#submit-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+#submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+}
 .form-actions {
     display: flex;
     flex-wrap: wrap;
